@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="app"></div>
+</body>
+<script src="../react/react.js"></script>
+<script src="../react/react-dom.js"></script>
+<script src="../react/babel.js"></script>
+<script type="text/babel">
+    class App extends React.Component{
+        constructor() {
+            super();
+            this.state={
+                firstname:'蒋',
+                lastname:'轶',
+                age:26,
+                gender:null
+            }
+        }
+        render(){
+            return(
+                <div>
+                    {/*1.或运算*/}
+                    <h2>{this.state.gender||'男'}</h2>
+                    {/*2.三目运算*/}
+                    <h2>{this.age>25?'老年人':'小学生'}</h2>
+                    {/*3.函数*/}
+                    <h2>{this.getFullName()}</h2>
+                </div>
+            )
+        }
+        getFullName(){
+            return this.state.firstname+this.state.lastname;
+        }
+    }
+    ReactDOM.render(<App/>,document.getElementById('app'))
+</script>
+</html>

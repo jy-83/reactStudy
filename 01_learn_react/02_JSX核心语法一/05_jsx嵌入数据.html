@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="app"></div>
+</body>
+<script src="../react/react.js"></script>
+<script src="../react/react-dom.js"></script>
+<script src="../react/babel.js"></script>
+<script type="text/babel">
+class App extends React.Component{
+    constructor() {
+        super();
+        this.state={
+            name:'蒋轶',
+            age:26,
+            bool:true
+        }
+    }
+    render(){
+        return(
+            <div>
+                <h2>{this.state.name}</h2>
+                <h2>{this.state.age}</h2>
+                <h2>{this.state.bool.toString()}</h2>
+                <h2>{this.state.bool?'我是对的':'我是错的'}</h2>
+            </div>
+        )
+    }
+}
+ReactDOM.render(<App/>,document.getElementById('app'))
+</script>
+</html>

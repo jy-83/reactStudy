@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="app"></div>
+</body>
+<script src="../react/react.js"></script>
+<script src="../react/react-dom.js"></script>
+<script src="../react/babel.js"></script>
+<script type="text/babel">
+    class App extends React.PureComponent{
+        constructor() {
+            super();
+            this.state={
+                movies:['钢铁侠','钢铁侠2']
+            }
+        }
+        render(){
+            return(
+                <ul>
+                    {/*这是一段注释*/}
+                    {
+                         /* 这是一段注释*/
+                        this.state.movies.map(item=>{
+                            return <li key={item}>{item}</li>
+                        })
+                    }
+                </ul>
+            )
+        }
+    }
+    ReactDOM.render(<App/>,document.getElementById('app'));
+</script>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h2></h2>
+    <button>按钮</button>
+</body>
+<script>
+    const title=document.querySelector('h2');
+    const button=document.querySelector('button');
+    let message="hello world";
+    title.innerHTML=message;
+    button.addEventListener('click',()=>{
+        message=message==='hello world'?'hello react':'hello world';
+        title.innerHTML=message;
+    })
+</script>
+</html>
